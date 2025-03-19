@@ -2,6 +2,9 @@ from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import tempfile
 import os
+# from pdf2image import convert_from_path
+import fitz 
+from PIL import Image
 from pdf2image import convert_from_path
 from google.cloud import vision
 from langchain_core.messages import SystemMessage, HumanMessage
@@ -26,6 +29,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+def extract_text_from_pdf(pdf_path):
+    doc = fitz.open(pdf_path)
+    text_content = []
+    
+    for i, page in enumerate(doc):
+        text = page.get_text("text")  # Extract text
+        text_content.append({"page": i+1, "text": text})
+
+    return text_content
 # Initialize Google Vision API client
 def initialize_vision_client():
     try:
@@ -129,7 +141,7 @@ async def ocr_endpoint(
         
         try:
             # Convert PDF to images using pdf2image
-            images = convert_from_path(temp_file.name)
+            images = convert_from_path(temp_file.name,poppler_path = r"D:\\poppler-24.08.0\\Library\\bin")
             
             # Extract text from each page with Google Vision API
             text_content = []
@@ -192,3 +204,7 @@ async def evaluate_answers(ocr_data: dict):
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+
+
+## To run this code use the following command in the terminal
+# uvicorn main:app --reload

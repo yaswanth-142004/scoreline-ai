@@ -1,0 +1,42 @@
+to test evaluate endpoint , use the below json : 
+
+{
+  "ocr_data": {
+    "question_paper": [
+      {
+        "page": 1,
+        "text": "Mathematics Examination - May 2025\n\nQuestion 1: Solve the following quadratic equation: 2x² + 7x - 15 = 0\n\nQuestion 2: Calculate the area of a circle with radius 8 cm. Express your answer in terms of π."
+      },
+      {
+        "page": 2,
+        "text": "Question 3: Differentiate the function f(x) = 3x⁴ - 5x² + 7 with respect to x.\n\nQuestion 4: Solve the system of linear equations:\n3x + 2y = 7\n5x - 4y = 3"
+      }
+    ],
+    "correct_answers": [
+      {
+        "page": 1,
+        "text": "Answer 1: For 2x² + 7x - 15 = 0\nUsing the quadratic formula: x = (-7 ± √(49 + 120))/4 = (-7 ± √169)/4 = (-7 ± 13)/4\nx = 3/2 or x = -5\n\nAnswer 2: Area of circle = πr²\nArea = π × 8² = 64π cm²"
+      },
+      {
+        "page": 2,
+        "text": "Answer 3: f(x) = 3x⁴ - 5x² + 7\nf'(x) = 12x³ - 10x\n\nAnswer 4: From 3x + 2y = 7, we get 2y = 7 - 3x, so y = (7 - 3x)/2\nSubstituting into 5x - 4y = 3:\n5x - 4((7 - 3x)/2) = 3\n5x - 4(7 - 3x)/2 = 3\n5x - 14 + 6x = 3\n11x = 17\nx = 17/11\nThen y = (7 - 3(17/11))/2 = (7 - 51/11)/2 = (77 - 51)/22 = 26/22 = 13/11"
+      }
+    ],
+    "student_answers": [
+      {
+        "page": 1,
+        "text": "Answer 1: For 2x² + 7x - 15 = 0\nUsing quadratic formula: x = (-7 ± √(49 + 120))/4\nx = (-7 ± √169)/4 = (-7 ± 13)/4\nx = 3/2 or x = -5\n\nAnswer 2: Area of circle = πr²\nArea = π × 8² = 64π"
+      },
+      {
+        "page": 2,
+        "text": "Answer 3: f(x) = 3x⁴ - 5x² + 7\nf'(x) = 12x³ - 10x\n\nAnswer 4: From 3x + 2y = 7, y = (7 - 3x)/2\nFrom 5x - 4y = 3, 5x - 4((7 - 3x)/2) = 3\n5x - 14 + 6x = 3\n11x = 17\nx = 17/11\nThen y = (7 - 3x)/2 = (7 - 3(17/11))/2 = (7 - 51/11)/2 = 13/11"
+      }
+    ]
+  }
+}
+
+
+
+
+need to upload 3 pdfs for /ocr endpoint.
+then we need to pass the  response of the /ocr endpoint to /evaluate endpoint.
