@@ -1,7 +1,11 @@
 fastapi
 uvicorn
 python-multipart
+pillow
+pymupdf
 pdf2image
-pytesseract
-groq 
-
+google-cloud-vision
+langchain-core
+langchain-groq
+python-dotenv
+python-multipart
