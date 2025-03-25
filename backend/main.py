@@ -41,7 +41,8 @@ def extract_text_from_pdf(pdf_path):
 # Initialize Google Vision API client
 def initialize_vision_client():
     try:
-        client = vision.ImageAnnotatorClient.from_service_account_file('C:\\Users\\HP\\Downloads\\our-chess-448616-u2-2dc0eb7da594.json')
+       # client = vision.ImageAnnotatorClient.from_service_account_file('C:\\Users\\HP\\Downloads\\our-chess-448616-u2-2dc0eb7da594.json')
+        client = vision.ImageAnnotatorClient.from_service_account_file('ocrapi.json')
         return client
     except Exception as e:
         raise RuntimeError(f"Failed to initialize Google Vision API client: {e}")
