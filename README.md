@@ -57,3 +57,24 @@ pip install -r requirements.txt
 
 # Run the server
 uvicorn main:app --reload
+
+
+## 🖼️ Application Screenshots
+
+> All screenshots are located in the `pictures/` folder.
+
+### 🏠 Home Page
+![Home](pictures/home.png)
+
+### ℹ️ About Page
+![About](pictures/about.png)
+
+### 👤 Profile Page
+![Profile](pictures/profile.png)
+
+### ⚙️ Evaluation in Progress
+![Working 1](pictures/working1.png)
+
+### 📈 Performance Report
+![Working 2](pictures/working2.png)
+
