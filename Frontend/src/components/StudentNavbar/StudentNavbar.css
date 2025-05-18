@@ -1,0 +1,214 @@
+/* Sidebar Container */
+.sidebar {
+    width: 80px; /* Default collapsed width */
+    height: 100vh;
+    background: #121212;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+    white-space: nowrap;
+    align-items: center; /* Center icons in collapsed mode */
+}
+
+/* Expand Sidebar on Hover */
+.sidebar:hover {
+    width: 250px; /* Expand width */
+    align-items: flex-start; /* Align text normally in expanded mode */
+}
+
+/* Navigation List */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+/* Navigation Links */
+.nav-list li {
+    width: 100%;
+}
+
+/* Default: Only show icons */
+.nav-list a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #aaa;
+    font-size: 1rem;
+    padding: 15px 20px;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    justify-content: center; /* Center icon when collapsed */
+}
+
+/* Icon */
+.nav-list a .icon {
+    font-size: 1.5rem;
+    transition: margin 0.3s ease-in-out;
+}
+
+/* Text is hidden initially */
+.nav-list a span {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    white-space: nowrap;
+    display: none; /* Hide text completely when collapsed */
+}
+
+/* Show text on sidebar hover */
+.sidebar:hover .nav-list a {
+    justify-content: flex-start; /* Align text properly */
+}
+
+.sidebar:hover .nav-list a span {
+    opacity: 1;
+    transform: translateX(0);
+    display: inline-block;
+}
+
+/* Add margin to icons when sidebar expands */
+.sidebar:hover .nav-list a .icon {
+    margin-right: 10px;
+}
+
+/* Hover Effect */
+.nav-list a:hover {
+    background: #333;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Active Link */
+.nav-list a.active {
+    background: #444;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Fix Content Margin */
+
+
+/* Shift content when sidebar expands */
+.sidebar:hover ~ .dashboard-content {
+    margin-left: 250px;
+}
+.logout-btn span {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    white-space: nowrap;
+    display: none;
+}
+
+/* Show text on sidebar hover */
+.sidebar:hover .logout-btn span {
+    opacity: 1;
+    transform: translateX(0);
+    display: inline-block;
+}
+.logout-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+    margin-top: auto; /* Push logout button to bottom */
+    display: flex;
+    align-items: center;
+    padding: 15px 20px 20px 30px;
+    font-size: 1rem;
+    color: #aaa;
+    transition: background 0.3s ease-in-out, color 0.3s;
+}
+
+/* Align Logout Button Correctly */
+.sidebar:hover .logout-btn {
+    justify-content: flex-start;
+}
+
+/* Add margin to icons when sidebar expands */
+.sidebar:hover .nav-list a .icon,
+.sidebar:hover .logout-btn .icon {
+    margin-right: 10px;
+}
+
+/* Hover Effect */
+.nav-list a:hover,
+.logout-btn:hover {
+    background: #333;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Active Link */
+.nav-list a.active {
+    background: #444;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Sidebar Logo */
+.sidebar-logo {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.sidebar-logo img {
+    width: 50px; /* Adjust the logo size */
+    height: auto;
+    border-radius: 25%;
+
+    transition: width 0.3s ease-in-out;
+}
+
+/* Expand logo when sidebar is hovered */
+.sidebar:hover .sidebar-logo img {
+    width: 120px;
+    margin-right: 15px;
+}
+
+/* Sidebar Footer (Logout Button) */
+.sidebar-footer {
+    margin-top: auto; /* Push logout button to bottom */
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+/* Adjust Logout Button */
+.sidebar-footer .logout-btn {
+    width: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    font-size: 1rem;
+    color: #aaa;
+    transition: background 0.3s ease-in-out, color 0.3s;
+}
+
+/* Expand Logout Text */
+.sidebar:hover .logout-btn {
+    justify-content: flex-start;
+    padding-left: 30px;
+}
+
+/* Hover Effect */
+.sidebar-footer .logout-btn:hover {
+    background: #333;
+    color: white;
+    border-radius: 5px;
+}

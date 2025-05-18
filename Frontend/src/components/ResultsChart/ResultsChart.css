@@ -1,0 +1,61 @@
+/* === Outer Container: Full Width Dashboard Card === */
+.charts-container {
+    max-width: max-content;
+    background: #2a2a2a;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    height: 450px;
+    margin-right: 25px;
+    position: relative;
+    bottom: 15px;
+  }
+  
+  /* === Title Styling === */
+  .charts-container h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f85a8f;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* === Wrapper for Pie & Bar Chart === */
+  .chart-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    gap: 20px;
+  }
+  .pie{
+    height: 325px;
+  }
+  
+  /* === Each Chart Box === */
+  .chart-box {
+    flex: 1 1 48%;
+    max-width: 400px;
+    background: #3a3a3a;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    text-align: center;
+    
+  }
+  
+  .chart-box h4 {
+    font-size: 1.2rem;
+    color: #f6c85f;
+    margin-bottom: 12px;
+  }
+  
+  /* === Responsive: Stack charts vertically === */
+  @media screen and (max-width: 768px) {
+    .chart-box {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+  

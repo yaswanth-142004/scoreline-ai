@@ -1,0 +1,179 @@
+/* General Page Layout */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  margin: 0;
+}
+.auth-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background: #000; /* Dark background for outer space effect */
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* Left Side - Dark Theme for Branding/Text */
+.auth-left {
+    flex: 1;
+    background: url("")  center;
+    background-size:cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+    min-height: vh;
+}
+
+.auth-left h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.auth-left p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* Right Side - Form Section */
+.auth-right {
+    flex: 1;
+    background: #fff;
+    padding: 50px;
+    border-radius: 20px 0 0 20px; /* Rounded edges on the left */
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #333;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 450px;
+    margin-right: 5px;
+}
+
+/* Form Inputs */
+.auth-right form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+}
+
+.auth-right input,
+.auth-right select {
+    width: auto;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+.auth-right input:focus,
+.auth-right select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.5);
+}
+
+/* Submit Button */
+.auth-right button {
+    width: 100%;
+    background-color: #000;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: bold;
+    margin-top: 10px;
+   
+}
+.login-mode{
+    z-index: 1000;
+}
+.signup-mode{
+    z-index: 1000;
+}
+
+.auth-right button:hover {
+    background-color: #222;
+}
+
+/* Toggle Between Login & Signup */
+.toggle-text {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.toggle-text span {
+    color: #667eea;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.toggle-text span:hover {
+    text-decoration: underline;
+}
+
+/* Google & Apple Sign-In Buttons */
+.auth-social {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.auth-social button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: 0.3s;
+    background: white;
+}
+
+.auth-social button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.auth-social button:hover {
+    background: #f5f5f5;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 900px) {
+    .auth-container {
+        flex-direction: column;
+    }
+
+    .auth-left {
+        display: none; /* Hide left branding on small screens */
+    }
+
+    .auth-right {
+        width: 100%;
+        border-radius: 0; /* Remove border-radius for full width */
+    }
+}

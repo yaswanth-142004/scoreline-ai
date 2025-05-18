@@ -1,0 +1,176 @@
+/* Profile Layout */
+/* Profile Container */
+/* Profile Container */
+.profile-container {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    padding: 40px;
+    background: linear-gradient(135deg, rgb(108 110 142), rgba(206, 18, 18, 0));
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    text-align: center;
+    color: #FFFFFF; /* White text for better contrast */
+    transition: 0.3s ease-in-out;
+    margin-left: 525px;
+    margin-right: 400px;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .profile-container {
+        max-width: 90%;
+        padding: 30px;
+    }
+}
+
+/* When sidebar expands, content shifts accordingly */
+.sidebar:hover ~ .profile-container {
+    margin-right: 250px; /* Match expanded sidebar width */
+}
+
+/* ✅ Profile Icon */
+.profile-icon {
+    font-size: 80px;
+    color: #353434;
+    margin-bottom: 20px;
+}
+
+/* Profile Header */
+.profile-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: black;
+}
+.profilename{
+    color: #4d2292;
+}
+/* Profile Details */
+.profile-details p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: rgb(156, 161, 135);
+    /* background: linear-gradient(177deg, rgb(110 62 62), rgba(179, 160, 200)); */
+    text-transform: capitalize;
+    font-weight: 800;
+    font-family:"poppins";
+}
+.profile-details Strong{
+    color: #252020;
+    font-weight: bold;
+}
+
+.profile-details strong {
+    color:  #000000;
+    font-weight: bold;
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+}
+
+/* Edit Button */
+.edit-btn {
+    background-color: #18181b;
+    color: white;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.edit-btn:hover {
+    transition: 0.3s ease-in-out;
+    color:black;
+    background-color: white;
+}
+
+/* Profile Form */
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Input Fields */
+.profile-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #555;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #2d2d44;
+    color: white;
+    transition: 0.3s;
+}
+
+.profile-form input:focus {
+    border-color: #6d28d9;
+    outline: none;
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Save Button */
+.save-btn {
+    background-color: #edf3f0;
+    color: black;
+    width: 48%;
+}
+
+.save-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Cancel Button */
+.cancel-btn {
+    background-color: #050505;
+    color: white;
+    width: 48%;
+}
+
+
+.cancel-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    /* On smaller screens, adjust the layout */
+    .profile-container {
+        width: 90%;
+        margin: 20px auto;
+        padding: 30px;
+    }
+
+    /* Ensure icons and text fit well */
+    .profile-icon {
+        font-size: 60px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button-group button {
+        width: 100%;
+    }
+}

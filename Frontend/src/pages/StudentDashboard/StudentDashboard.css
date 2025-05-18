@@ -1,0 +1,111 @@
+/* === Wrapper Layout === */
+.student-dashboard-content {
+    margin-left: 80px;
+    flex: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow: hidden; /* Hide scroll */
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+    background: linear-gradient(to right, #1f1f1f, #121212);
+  }
+  
+  
+  
+  
+  .result{
+    position: relative;
+    bottom: 255px;
+  }
+  /* === Sidebar (fixed) === */
+  .student-sidebar {
+    width: 80px;
+    background-color: #121212;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transition: width 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  .student-sidebar:hover {
+    width: 250px;
+  }
+  
+  /* === Content (shifts with sidebar) === */
+  .student-dashboard-content {
+    margin-left: 80px;
+    flex: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+    box-sizing: border-box;
+  }
+  
+  .student-sidebar:hover ~ .student-dashboard-content {
+    margin-left: 250px;
+  }
+  
+  .student-bottom-section{
+
+  }
+
+  /* === Sections === */
+  .student-top-section,
+  .student-bottom-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 👈 horizontal layout */
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  
+  /* Responsive Flex Behavior */
+  .student-top-section > *,
+  .student-bottom-section > * {
+    flex: 1 1 48%;
+    min-width: 300px;
+    box-sizing: border-box;
+  }
+  
+  /* === Typography === */
+  .student-dashboard-content h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  /* === Responsive Design === */
+  @media screen and (max-width: 992px) {
+    .student-dashboard-content {
+      margin-left: 0;
+    }
+  
+    .student-sidebar:hover ~ .student-dashboard-content {
+      margin-left: 0;
+    }
+  
+    .student-top-section,
+    .student-bottom-section {
+      flex-direction: column;
+    }
+  
+    .student-dashboard-content h1 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .student-dashboard-content {
+      padding: 10px;
+    }
+  
+    .student-dashboard-content h1 {
+      font-size: 1.2rem;
+    }
+  }
+  

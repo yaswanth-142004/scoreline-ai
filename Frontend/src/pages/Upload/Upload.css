@@ -1,0 +1,238 @@
+/* General Styles */
+body {
+    background-color: #121212; /* Dark Background */
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidebar Container */
+.sidebar {
+    width: 80px; /* Default collapsed width */
+    height: 100vh;
+    background: #121212;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+    white-space: nowrap;
+    align-items: center; /* Center icons in collapsed mode */
+}
+
+/* Expand Sidebar on Hover */
+.sidebar:hover {
+    width: 250px; /* Expand width */
+    align-items: flex-start; /* Align text normally in expanded mode */
+}
+
+/* Navigation List */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+/* Navigation Links */
+.nav-list li {
+    width: 100%;
+}
+
+/* Default: Only show icons */
+.nav-list a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #aaa;
+    font-size: 1rem;
+    padding: 15px 20px;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    justify-content: center; /* Center icon when collapsed */
+}
+
+/* Icon */
+.nav-list a .icon {
+    font-size: 1.5rem;
+    transition: margin 0.3s ease-in-out;
+}
+
+/* Text is hidden initially */
+.nav-list a span {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    white-space: nowrap;
+    display: none; /* Hide text completely when collapsed */
+}
+
+/* Show text on sidebar hover */
+.sidebar:hover .nav-list a {
+    justify-content: flex-start; /* Align text properly */
+}
+
+.sidebar:hover .nav-list a span {
+    opacity: 1;
+    transform: translateX(0);
+    display: inline-block;
+}
+
+/* Add margin to icons when sidebar expands */
+.sidebar:hover .nav-list a .icon {
+    margin-right: 10px;
+}
+
+/* Hover Effect */
+.nav-list a:hover {
+    background: #333;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Active Link */
+.nav-list a.active {
+    background: #444;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Content Container */
+.upload-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    height: 85vh;
+    
+    background-color: #181818; /* Dark Background for container */
+    margin-left: 80px; /* Adjust for collapsed sidebar */
+    transition: margin-left 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* When Sidebar is expanded, content shifts accordingly */
+.sidebar:hover ~ .upload-container {
+    margin-left: 250px; /* Shift content when sidebar expands */
+}
+
+/* Left Section: Upload Cards */
+.upload-section {
+    background-color: #2C2C2C; /* Dark card background */
+    padding: 30px;
+    border-radius: 10px;
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin-right: 15PX;
+}
+
+.upload-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.upload-section label {
+    color: #ccc;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.upload-section input {
+    width: AUTO;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #333;
+    color: #fff;
+    transition: 0.3s ease;
+}
+
+.upload-section input:focus {
+    border-color: #4f46e5;
+    outline: none;
+}
+
+.upload-section button {
+    padding: 15px;
+    background-color: #4f46e5; /* Button color */
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.upload-section button:hover {
+    background-color: #6d28d9;
+}
+
+/* Right Section: Student Details */
+.student-details {
+    background-color: #2C2C2C;
+    padding: 30px;
+    border-radius: 10px;
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.student-details h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.student-details input {
+    width: AUTO;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #333;
+    color: #fff;
+}
+
+.student-details button {
+    padding: 15px;
+    background-color: #2ecc71; /* Button color */
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.student-details button:hover {
+    background-color: #27ae60;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .upload-container {
+        flex-direction: column;
+        padding: 20px;
+        margin-left: 0; /* Reset margin on smaller screens */
+    }
+
+    .upload-section, .student-details {
+        width: 100%;
+    }
+
+    .upload-section {
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,53 @@
+/* Quote Container */
+.quote-slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 80%;
+    max-width: 500px;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Quote Card */
+.quote-card {
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ff7eb3, #fdcaff);
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Slide Effects */
+.slide-in {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.slide-out {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+/* Author Text */
+.quote-card span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    .quote-card {
+        font-size: 1rem;
+        padding: 15px;
+    }
+}

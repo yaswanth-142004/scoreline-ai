@@ -1,0 +1,151 @@
+/* 📌 Small Container */
+.result-container {
+  width: 90%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin: 20px auto;
+
+  /* ✅ Add scroll and height limit */
+  max-height: 250px;
+  overflow-y: auto;
+}
+.result-table tbody {
+  display: block;
+  max-height: 150px;   /* 👈 Set scroll height */
+  overflow-y: auto;
+  width: auto;
+}
+
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* Header */
+.result-table thead {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  background: rgba(255, 255, 255, 0.3);
+  color: #ffcc70;
+}
+
+.result-table thead th {
+  padding: 10px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Scrollable Body */
+.result-table tbody {
+  display: block;
+  max-height: 150px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+/* Body Rows */
+.result-table tbody tr {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.result-table tbody td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Zebra striping */
+.result-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.result-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+
+/* Optional: Prevent table from overflowing horizontally */
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+
+/* 📌 Heading */
+.result-container h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffcc70;
+  margin-bottom: 10px;
+}
+
+/* 📌 Result Table */
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: white;
+  overflow: hidden;
+}
+
+/* 📌 Table Header */
+.result-table th {
+  padding: 10px;
+  color: #ffcc70;
+  background: rgba(255, 255, 255, 0.3);
+  text-align: left;
+  font-weight: bold;
+}
+
+/* 📌 Table Rows */
+.result-table tbody tr {
+  transition: background 0.3s;
+}
+
+.result-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.result-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* 📌 Table Cells */
+.result-table td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 📌 No Data Message */
+.no-data {
+  color: #ccc;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* 📌 Responsive */
+@media (max-width: 600px) {
+  .result-container {
+      max-width: 90%;
+      padding: 15px;
+  }
+
+  .result-table th, .result-table td {
+      padding: 8px;
+  }
+}

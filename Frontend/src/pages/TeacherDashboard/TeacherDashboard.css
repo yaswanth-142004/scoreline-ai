@@ -1,0 +1,115 @@
+/* Root Container */
+.dashboard-container {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;                /* ✅ Occupy full screen height */
+    width: 100%;
+    background-color: #1e1e1e;
+    color: white;
+    overflow: hidden;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 250px;
+    background-color: #121212;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Main Dashboard Content */
+  .dashboard-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow-y: auto;               /* ✅ Scrollable when content overflows */
+    z-index: 10000;
+  }
+  
+  /* Allow full-page scroll */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;                /* ✅ Let body scroll if needed */
+  }
+  
+  /* Dashboard Title */
+  .dashboard-content h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #e0e0e0;
+    text-align: center;
+    margin: 0;
+  }
+  
+  /* Sections */
+  .top-section,
+  .bottom-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  /* Child components in sections */
+  .top-section > *,
+  .bottom-section > * {
+    flex: 1 1 48%;
+    box-sizing: border-box;
+  }
+  
+  /* Hide scrollbars for aesthetic */
+  * {
+    scrollbar-width: none;
+  }
+  *::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Responsive - Tablet & Mobile */
+  @media screen and (max-width: 992px) {
+    .dashboard-container {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      height: auto;
+    }
+  
+    .dashboard-content {
+      padding: 15px;
+      max-width: 100%;
+    }
+  
+    .top-section,
+    .bottom-section {
+      flex-direction: column;
+    }
+  
+    .top-section > *,
+    .bottom-section > * {
+      flex: 1 1 100%;
+    }
+  
+    .dashboard-content h1 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .dashboard-content {
+      padding: 10px;
+    }
+  
+    .dashboard-content h1 {
+      font-size: 1.2rem;
+    }
+  }
+  
